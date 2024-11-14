@@ -1,4 +1,87 @@
+body {
+    background-color: #ffe8ec;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* media */
+
+
+/* header */
+header {
+    position: absolute;
+    background-color: pink;
+    box-shadow: 0 5px 10px 2px rgba(128, 128, 128, 0.228);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1em;
+    align-items: center;
+    /* flex-direction: column; */
+     
+
+    & a {
+        margin: 5px;
+        color: gray;
+        padding: 2px;
+        transition: .2s;
+        text-decoration: none;
+        border-radius: 2px;
+        font-size: 1.5em;
+        
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+
+    & .menu {
+        border: 0;
+        font-size: 1.5em;
+        color: gray;
+        cursor: pointer;
+        font-weight: 700;
+        border-radius: 50%;
+        transform: rotate(90deg);
+        letter-spacing: 2px;
+        transition: .2s;
+        user-select: none;
+        filter: contrast(0);
+    }
+    & #ham:checked{
+        &~.menu{
+            transform: rotate(0);
+        }
+        & ~ .menu-box {
+            height: 13em;
+        }
+    }
+
+}
+
+
+
+.menu-box{
+    overflow: hidden;
+    width: 100vw;
+    height:0;
+    background-color: pink;
+    display: grid;
+    justify-content: center;
+    transition: .2s;
+    & a{
+        text-decoration: none;
+        color: gray;
+        font-size: 1.5em;
+        margin: .2em;
+    }
+}
 /* hidden */
-.hidden{
+.hidden {
     display: none;
 }
