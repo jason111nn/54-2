@@ -1,5 +1,5 @@
 body {
-    background-color: #ffe8ec;
+    background-color: #dedede;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -15,8 +15,8 @@ body {
 /* header */
 header {
     position: absolute;
-    background-color: pink;
-    box-shadow: 0 5px 10px 2px rgba(128, 128, 128, 0.228);
+    background-color: rgb(96, 96, 96);
+    box-shadow: 0 5px 10px 2px rgba(255, 255, 255, 0.228);
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -28,7 +28,7 @@ header {
 
     & a {
         margin: 5px;
-        color: gray;
+        color: rgb(197, 197, 197);
         padding: 2px;
         transition: .2s;
         text-decoration: none;
@@ -43,7 +43,7 @@ header {
     & .menu {
         border: 0;
         font-size: 1.5em;
-        color: gray;
+        color: rgb(190, 190, 190);
         cursor: pointer;
         font-weight: 700;
         border-radius: 50%;
@@ -70,13 +70,13 @@ header {
     overflow: hidden;
     width: 100vw;
     height:0;
-    background-color: pink;
+    background-color: rgba(255, 192, 203, 0);
     display: grid;
     justify-content: center;
     transition: .2s;
     & a{
         text-decoration: none;
-        color: gray;
+        color: rgb(224, 224, 224);
         font-size: 1.5em;
         margin: .2em;
     }
