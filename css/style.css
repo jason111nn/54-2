@@ -58,7 +58,9 @@ header {
             transform: rotate(0);
         }
         & ~ .menu-box {
+            margin-top: 1em;
             height: 13em;
+            
         }
     }
 
