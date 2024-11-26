@@ -6,7 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>快樂旅遊網</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
+    <script src="./jquery/jquery.js"></script>
+    <script src="./js/calendar.js"></script>
+    <script defer src="js/main.js"></script>
+    <style>
+        #calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+
+            & div {
+                background-color: rgb(61, 61, 61);
+                color: white;
+                width: 5em;
+                height: 2em;
+                text-align: center;
+                border-radius: 5px;
+                margin: 2px;
+                cursor: pointer;
+            }
+        }
+
+        #booking-form {
+            user-select: none;
+        }
+
+        .room-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        #calendar-box {
+            display: grid;
+            justify-items: center;
+        }
+
+        #month {
+            margin: 2px;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,7 +65,90 @@
         </div>
     </header>
 
+    <main>
+        <form id="booking-form">
+            <div class="booking-first">
+                <div id="calendar-box">
+                    <div style="display: flex;">
+                        <div onclick="prev()">前一個月 &lt;&lt;</div>
+                        <div id="month"></div>
+                        <div onclick="next()">>> 下一個月</div>
+                    </div>
+                    <div id="calendar">
+                        <div>日</div>
+                        <div>一</div>
+                        <div>二</div>
+                        <div>三</div>
+                        <div>四</div>
+                        <div>五</div>
+                        <div>六</div>
+                        <!-- 日期/價格/時間 -->
+                    </div>
+                </div>
 
+                <label for="room">訂房間數</label>
+                <input type="text" id="room" name="room" required><br>
+
+                <label for="day">入住天數</label>
+                <input type="text" id="day" name="day" required><br>
+
+                <label for="date">入住日期</label>
+                <input type="text" id="date" name="date" required readonly>
+                <label for="date-nt">到</label>
+                <input type="text" id="date-nt" name="date-nt" readonly><br>
+
+                <label for="room-number">房號</label>
+                <input type="text" id="room-number" name="room-number">
+                <button type="button" id="auto-generate">自動產生房號</button>
+                <button type="button" onclick="toggledisplay('.booking-first','.booking-next')">選擇房號</button><br>
+
+                <button type="submit">確認訂房</button>
+                <button type="button" id="cancel">取消</button>
+            </div>
+            <div class="booking-next hidden">
+                <h1 id="month"></h1>
+                <div class="room-box">
+                    <div id="room1">
+                        <h3>Room01</h3>
+                        <p id="state">有</p>
+                    </div>
+                    <div id="room2">
+                        <h3>Room02</h3>
+                        <p id="state">有</p>
+                    </div>
+                    <div id="room3">
+                        <h3>Room03</h3>
+                        <p id="state">有</p>
+                    </div>
+                    <div id="room4">
+                        <h3>Room04</h3>
+                        <p id="state">有</p>
+                    </div>
+                    <div id="room5">
+                        <h3>Room05</h3>
+                        <p id="state">有</p>
+                    </div>
+                    <div id="room6">
+                        <h3>Room06</h3>
+                        <p id="state">有</p>
+                    </div>
+                    <div id="room7">
+                        <h3>Room07</h3>
+                        <p id="state">有</p>
+                    </div>
+                    <div id="room8">
+                        <h3>Room08</h3>
+                        <p id="state">有</p>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <button type="button">確認選取</button>
+                    <button type="button">放棄選取</button>
+                    <button type="button" onclick="toggledisplay('.booking-next','.booking-first')">放棄離開</button>
+                </div>
+            </div>
+        </form>
+    </main>
 
 </body>
 

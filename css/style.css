@@ -6,7 +6,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 /* media */
@@ -14,6 +14,7 @@ body {
 
 /* header */
 header {
+    z-index: 200;
     position: absolute;
     background-color: rgb(96, 96, 96);
     box-shadow: 0 5px 10px 2px rgba(255, 255, 255, 0.228);
@@ -81,6 +82,27 @@ header {
         color: rgb(224, 224, 224);
         font-size: 1.5em;
         margin: .2em;
+    }
+}
+main{
+    position: absolute;
+    width: 90vw;
+    top: 6.5em;
+    display: grid;
+    justify-content: center;
+    border: 2px #9d9d9d solid;
+    border-radius: 5px;
+    
+}
+.room-box{
+    &>div{
+        margin: 5px;
+        border: #9d9d9d 2px solid;
+        display: grid;
+        justify-items: center;
+        height: auto;
+        width: 5em;
+        border-radius: 2px;
     }
 }
 /* hidden */
